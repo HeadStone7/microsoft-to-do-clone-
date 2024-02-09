@@ -1,0 +1,18 @@
+{
+  "name": "micro-to-to",
+  "version": "1.0.0",
+  "description": "clone microsift to do",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "to-do"
+  ],
+  "author": "Joe",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.2.1"
+  }
+}
