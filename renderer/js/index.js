@@ -63,10 +63,6 @@ Array.prototype.forEach.call(patterns, pattern => {
 })
 
 
-/**
- * TODO
- * Onclick hover
- */
 function pushDataOfSelectedBtn() {
 }
 
