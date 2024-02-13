@@ -1,19 +1,73 @@
 const patterns = document.getElementsByClassName('pattern')
-const pattern1 = document.getElementsByClassName("pattern one")
-const myDayContent = document.createElement('div');
+const myDay = document.getElementsByClassName("pattern one")
 const wrapper = document.getElementById('wrapper')
 const currentDate = new Date()
 
 document.addEventListener('DOMContentLoaded', function () {
-    /**
-     * onclick first left nav btn(My Day) --> display the related content
-     */
-    Array.prototype.forEach.call(pattern1, pattern => {
+    pushDataOfSelectedBtnInWrapper()
+})
+
+
+/**
+ * onclick first left nav btn(My Day) --> display the related content
+ */
+
+function pushDataOfSelectedBtnInWrapper() {
+
+    Array.prototype.forEach.call(patterns, pattern => {
         pattern.addEventListener('click', () => {
-            wrapper.style.background = 'url(renderer/images/bg-3.jpg) no-repeat center/cover';
-            //appends myDayContent in Wrapper container
-            myDayContent.innerHTML =
-                `
+
+            //remove the class selectedBtn to any btn before assign it to a current selected btn
+            Array.prototype.forEach.call(patterns, ptrn => {
+                ptrn.classList.remove('selectedBtn')
+            })
+            pattern.classList.add('selectedBtn')
+            Array.prototype.forEach.call(pattern.classList, p =>{
+                switch (p) {
+                    case 'one':
+                        console.log('one')
+                        MyDayContentHTML()
+                        break;
+                    case 'two':
+                        console.log('two')
+                        break;
+                    case 'three':
+                        console.log('three')
+                        break;
+                    case 'four':
+                        console.log('four')
+                        break;
+                    case 'five':
+                        console.log('five')
+                        break;
+                    case 'six':
+                        console.log('six')
+                        break;
+                    case 'seven':
+                        console.log('seven')
+                        break;
+                    case 'eight':
+                        console.log('eight')
+                        break;
+                    default:
+                        console.log('nothing')
+                        break;
+                }
+
+            })
+        })
+
+    })
+
+}
+
+function MyDayContentHTML(){
+    resetWrapperContainer()
+    const myDayContent = document.createElement('div');
+    wrapper.style.background = 'url(renderer/images/bg-3.jpg) no-repeat center/cover';
+    //appends myDayContent in Wrapper container
+    myDayContent.innerHTML =
+        `
                 <div class="content-header">
                     <div class="left-head">
                         <div class="title">My Date</div>
@@ -35,34 +89,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     </div>
                 </div>
             `
-            myDayContent.className = 'my-day-content';
-            wrapper.appendChild(myDayContent)
-            const dateID = document.getElementById('date')
-            const options = {weekday: 'long', month: 'long', day: 'numeric'};
-            dateID.textContent = currentDate.toLocaleDateString('en-US', options)
-        })
+    myDayContent.className = 'my-day-content';
+    wrapper.appendChild(myDayContent)
+    const dateID = document.getElementById('date')
+    const options = {weekday: 'long', month: 'long', day: 'numeric'};
+    dateID.textContent = currentDate.toLocaleDateString('en-US', options)
+}
 
-    })
-})
-
-Array.prototype.forEach.call(patterns, pattern => {
-    pattern.addEventListener('click', () => {
-        Array.prototype.forEach.call(patterns, ptrn => {
-            ptrn.classList.remove('selectedBtn')
-            // console.log(ptn)
-        })
-        pattern.classList.add('selectedBtn')
-        Array.prototype.forEach.call(pattern.classList, p =>{
-                if(pattern.classList[0] === 'pattern' && pattern.classList[1] === 'one'){
-                    console.log(p)
-
-                }
-        })
-    })
-
-})
-
-
-function pushDataOfSelectedBtn() {
+function resetWrapperContainer(){
+    wrapper.style.background = "#171616FF";
+    wrapper.innerText = "";
 }
 
