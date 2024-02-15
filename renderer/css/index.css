@@ -60,10 +60,10 @@ body{
     font-size: 13px;
     color: #efefef;
 }
-input, .search-input {
-    width: 95%;
+#search-input {
+    width: 84%;
     height: 5%;
-    padding: 5px;
+    padding: 5px 25px 5px 5px;
     border-radius: 5px;
     border: 1px solid #413e3e;
     border-bottom: 2px solid #bebdbd;
@@ -203,8 +203,9 @@ svg{
 }
 .my-day-content{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
+    flex-direction: column;
     width: 90%;
     height: 90%;
     /*background: #3498db;*/
@@ -215,6 +216,66 @@ svg{
     justify-content: space-between;
     width: 100%;
     height: 10%;
+}
+.my-day-content-body{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    width: 100%;
+}
+.my-day-footer{
+    position: relative;
+    display: flex;
+    height: 10%;
+    width: 100%;
+}
+.my-day-footer > ::placeholder{
+    color: #fff;
+}
+.my-day-footer-input{
+    height: 50%;
+    width: 100%;
+    padding: 5px 5px 5px 50px;
+    border-radius: 5px;
+    border: 1px solid #413e3e;
+    outline: none;
+    font-size: 17px;
+    background: #252323cf;
+    color: #efefef;
+    opacity: 1;
+}
+.my-day-content-hint{
+    position: relative;
+    bottom: 5%;
+    width: 63%;
+    height: 34%;
+    padding: 4px;
+    background: #29272791;
+    border-radius: 4px;
+    text-align: center;
+}
+.my-day-content-hint > svg{
+    width: 80px;
+    height: 80px;
+}
+.my-day-content-hint > p{
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+}
+.add-task-icon{
+    position: absolute;
+    top: 5%;
+    bottom: 1%;
+    left: 1%;
+    right: 1%;
+    width: 40px;
+    height: 40px;
+}
+.my-day-footer > .circle1{
+    visibility: hidden;
 }
 .left-head{
     width: 70%;
@@ -241,7 +302,7 @@ svg{
     gap: 4%;
 }
 
-.reduceBtn, .rightDrawerBtn, .themeBtn{
+.reduceBtn, .rightDrawerBtn{
     position: relative;
     cursor: pointer;
     display: flex;
@@ -251,6 +312,17 @@ svg{
     width: 50%;
     height: 50%;
     background: #413e3ec4;
+    transition: background-color 0.5s ease;
+}
+.themeBtn{
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
     transition: background-color 0.5s ease;
 }
 .reduceBtn:hover, .rightDrawerBtn:hover, .themeBtn:hover{
@@ -282,9 +354,6 @@ svg{
     opacity: 1;
     visibility: visible;
 }
-/*.reduceBtn:hover .rightDrawerBtn:hover, .themeBtn:hover{*/
-/*    background: rgba(101, 99, 99, 0.91);*/
-/*}*/
 .selectedBtn{
     background:#989A9D9E;
     transition: background-color 0.5s ease;

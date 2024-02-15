@@ -1,7 +1,7 @@
 {
   "name": "micro-to-to",
   "version": "1.0.0",
-  "description": "clone microsift to do",
+  "description": "clone microsoft to do",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
